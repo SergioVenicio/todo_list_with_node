@@ -1,0 +1,9 @@
+header {
+  width: 100vw;
+  height: 9vh;
+  background-color: #403e3d;
+  color: #fff;
+  text-align: center;
+  line-height: 8vh;
+  font-weight: 600;
+}

@@ -1,0 +1,26 @@
+#table-container {
+  margin-top: 1rem;
+  background: #e5e5e5;
+  padding: 1em;
+}
+table {
+  width: 90vw;
+  margin-left: 4vw;
+  background-color: #ffff;
+  border-radius: 0.5rem;
+  padding: 1em;
+}
+
+table thead {
+  height: 5vh;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.done {
+  background-color: #42f554;
+}
+
+.done:hover {
+  background-color: #17b327;
+}
