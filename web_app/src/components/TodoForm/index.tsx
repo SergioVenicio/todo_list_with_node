@@ -1,22 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import useTodoContext from "../../contexts/TodoContext";
 
 import "./index.css";
 
-interface TodoFormData {
-  title: string;
-  category: string;
-  setTitle: Function;
-  setCategory: Function;
-  saveTodo: Function;
-}
+const TodoForm = () => {
+  const { saveTodo } = useTodoContext();
+  const [title, setTitle] = useState("");
+  const [category, setCategory] = useState("");
 
-const TodoForm = ({
-  title,
-  category,
-  setTitle,
-  setCategory,
-  saveTodo,
-}: TodoFormData) => {
+  const handleSave = async () => {
+    await saveTodo(title, category);
+  };
+
   return (
     <form>
       <input
@@ -33,7 +28,7 @@ const TodoForm = ({
         value={category}
         onChange={(e) => setCategory(e.target.value)}
       />
-      <button type="button" onClick={() => saveTodo()}>
+      <button type="button" onClick={() => handleSave()}>
         Save
       </button>
     </form>

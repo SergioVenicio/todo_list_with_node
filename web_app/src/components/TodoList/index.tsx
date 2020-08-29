@@ -1,34 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+
+import useTodoContext from "../../contexts/TodoContext";
+import { Todo } from "../../contexts/contextIntefaces";
 
 import "./index.css";
 
-interface Category {
-  id: string;
-  title: string;
-}
-interface Todo {
-  id: string;
-  title: string;
-  category_id: string;
-  done: boolean;
-  created_date: Date;
-  updated_date?: Date;
-  conclusion_date?: Date;
-}
-
-interface TodoListData {
-  todos: Todo[];
-  getCategory: Function;
-  deleteTodo: Function;
-  setDone: Function;
-}
-
-const TodoList = ({
-  todos,
-  getCategory,
-  deleteTodo,
-  setDone,
-}: TodoListData) => {
+const TodoList = () => {
+  const { todos, getCategory, setDone, deleteTodo } = useTodoContext();
   const renderTodos = () => {
     return todos.map(
       ({
